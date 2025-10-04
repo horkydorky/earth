@@ -1,0 +1,90 @@
+earthpulse-3d/
+│
+├── frontend/                     # React + Three.js app
+│   ├── public/                   # Static assets (icons, textures, shaders)
+│   │   ├── earth_textures/
+│   │   │   ├── earth_day.jpg
+│   │   │   ├── earth_night.jpg
+│   │   │   ├── clouds.png
+│   │   │   └── bump_map.jpg
+│   │   ├── models/               # (if you add GLTF/3D assets)
+│   │   └── favicon.ico
+│   │
+│   ├── src/
+│   │   ├── assets/               # Additional textures, icons, or audio
+│   │   │   ├── ui/
+│   │   │   ├── icons/
+│   │   │   └── sounds/
+│   │   │
+│   │   ├── components/           # UI components (Navbar, Sidebar, Sliders)
+│   │   │   ├── ui/               # Reusable UI elements (buttons, toggles)
+│   │   │   ├── overlays/         # HUD overlays for info/stats
+│   │   │   └── layout/           # Navigation, page layout
+│   │   │
+│   │   ├── three/                #  All 3D/Three.js related code
+│   │   │   ├── scenes/           # Scene setup files
+│   │   │   │   └── EarthScene.jsx
+│   │   │   ├── components/       # 3D objects (Globe, Atmosphere, Stars)
+│   │   │   │   ├── Globe.jsx
+│   │   │   │   ├── Atmosphere.jsx
+│   │   │   │   ├── Stars.jsx
+│   │   │   │   └── Lights.jsx
+│   │   │   ├── hooks/            # Custom hooks (camera control, animations)
+│   │   │   │   ├── useEarthData.js
+│   │   │   │   └── useCameraTransition.js
+│   │   │   ├── shaders/          # Custom GLSL shaders (if needed)
+│   │   │   │   ├── atmosphere.glsl
+│   │   │   │   └── heatmap.glsl
+│   │   │   └── utils/            # Helper functions for 3D logic
+│   │   │       └── mapUtils.js
+│   │   │
+│   │   ├── data/                 # Static or local JSON datasets
+│   │   │   ├── regions.json
+│   │   │   └── year_mapping.json
+│   │   │
+│   │   ├── pages/                # High-level pages (Home, About, Info)
+│   │   │   ├── Home.jsx
+│   │   │   └── About.jsx
+│   │   │
+│   │   ├── store/                # Zustand state management
+│   │   │   └── useStore.js
+│   │   │
+│   │   ├── App.jsx               # Root component
+│   │   ├── main.jsx              # Entry point
+│   │   ├── index.css             # Global styles
+│   │   └── tailwind.config.js
+│   │
+│   ├── package.json
+│   └── vite.config.js
+│
+├── backend/                      #  FastAPI backend
+│   ├── main.py                   # API entrypoint
+│   ├── requirements.txt
+│   │
+│   ├── routers/                  # API endpoints
+│   │   ├── __init__.py
+│   │   ├── glaciers.py
+│   │   ├── vegetation.py
+│   │   ├── temperature.py
+│   │   └── urban_growth.py
+│   │
+│   ├── services/                 # Core logic for data fetching / processing
+│   │   ├── nasa_data_service.py
+│   │   ├── ndvi_analysis.py
+│   │   └── glacier_analysis.py
+│   │
+│   ├── models/                   # Data models (Pydantic schemas)
+│   │   └── schemas.py
+│   │
+│   ├── utils/                    # Helper functions (API calls, caching)
+│   │   ├── fetch_utils.py
+│   │   └── cache_utils.py
+│   │
+│   ├── data/                     # Preprocessed datasets / sample imagery
+│   │   ├── ndvi/
+│   │   ├── glaciers/
+│   │   └── temperature/
+│   │
+│   └── │
+├── README.md
+└── .gitignore
