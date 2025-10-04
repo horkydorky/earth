@@ -7,8 +7,15 @@ import matplotlib.cm as cm
 import os
 
 # Define our data directories for clarity
-RAW_DATA_DIR = "backend/data/ndvi/raw"
-PROCESSED_DATA_DIR = "backend/data/ndvi/processed"
+# --- Robust Path Configuration ---
+# Get the absolute path to the directory of the current script (services/)
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+# Go up one level to get the backend root directory (backend/)
+BACKEND_ROOT = os.path.dirname(SCRIPT_DIR)
+
+# Construct the absolute data paths from the backend root
+RAW_DATA_DIR = os.path.join(BACKEND_ROOT, "data", "ndvi", "raw")
+PROCESSED_DATA_DIR = os.path.join(BACKEND_ROOT, "data", "ndvi", "processed")
 
 # Crucial step: Ensure the output directory exists.
 os.makedirs(PROCESSED_DATA_DIR, exist_ok=True)
@@ -47,11 +54,10 @@ def process_vegetation_data_for_region(region: str, year: int) -> str:
 
     _create_heatmap_image(ndvi_data, output_image_path)
 
-    # Step 4: Return the public-facing URL path for the API
-    # This path assumes static files will be served from the 'processed' folder.
+    
     api_path = f"/static/data/ndvi/processed/{output_filename}"
     print(f"Processing complete. Heatmap available at: {api_path}")
-    return api_path
+    return output_image_path 
 
 
 def _calculate_ndvi(red_path: str, nir_path: str) -> np.ndarray:
