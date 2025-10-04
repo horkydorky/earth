@@ -1,17 +1,3 @@
-Of course. A great `README.md` is the final, crucial step to showcase your incredible work. It's your project's front door.
-
-Here is a complete, professional `README.md` file tailored specifically for your project. I have included sections that explain the "what," the "why," and the "how," and I've used Markdown formatting to make it look clean and impressive.
-
----
-
-### **Your Action: Create and Populate `README.md`**
-
-1.  In the root directory of your `earth` project (alongside `app.py`), create a new file named `README.md`.
-2.  **Copy the entire block of text below** and paste it into your new `README.md` file.
-3.  **Crucial Step:** You will need to take a screenshot of your working Streamlit application (showing the Kathmandu heatmap) and add it to your project. I've marked the exact spot where you need to insert it.
-
----
-
 ```markdown
 # 🌍 EarthPulse: NDVI Vegetation Analysis
 
